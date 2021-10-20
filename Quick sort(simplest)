@@ -1,0 +1,16 @@
+def quicksort(arr):
+    if len(arr)<=1:
+        return arr
+    else:
+        pivot = arr.pop()
+    greater = []
+    smaller = []
+    for i in range(len(arr)):
+        if arr[i] > pivot:
+            greater.append(arr[i])
+        else:
+            smaller.append(arr[i])
+    return quicksort(smaller) + [pivot] + quicksort(greater)
+    
+arr = [19,18,17,16,15,14,13,12,11,10]
+print(quicksort(arr))
